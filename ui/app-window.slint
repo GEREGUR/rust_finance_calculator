@@ -1,0 +1,39 @@
+import { Button, VerticalBox, LineEdit } from "std-widgets.slint";
+
+export component AppWindow inherits Window {
+    in-out property <int> counter: 42;
+    callback request-increase-value();
+    background: #312FFe50;
+    GridLayout {
+        padding: 50px;
+        spacing: 25px;
+        Row {
+            Text {
+                text: "Введите ваш доход";
+                horizontal-alignment: center;
+                font-size: 24px;
+                font-weight: 900;
+            }
+        }
+
+        Row {
+            LineEdit {
+                horizontal-alignment: center;
+                font-size: 16px;
+                placeholder-text: "Введите число";
+                height: 35px;
+                input-type: number;
+            }
+        }
+
+        Row {
+            Button {
+                text: "Вычислить";
+                primary: true;
+                width: 400px;
+                height: 35px;
+
+            }
+        }
+    }
+}
